@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyanshu Dutta Audit Services | Stock & Inventory Audit</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+        header {
+            background: #0f172a;
+            color: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        header .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #38bdf8;
+        }
+        header nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        header nav a:hover {
+            color: #38bdf8;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #fff;
+            padding: 6rem 5%;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            color: #f8fafc;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 750px;
+            margin: 0 auto 2rem auto;
+        }
+        .btn {
+            display: inline-block;
+            background: #0284c7;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #0369a1;
+            transform: translateY(-2px);
+        }
+        section {
+            padding: 5rem 5%;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        .section-title h2 {
+            font-size: 2.25rem;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+        .section-title p {
+            color: #64748b;
+            font-size: 1.05rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #0284c7;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+        }
+        .service-card i {
+            font-size: 2.5rem;
+            color: #0284c7;
+            margin-bottom: 1.25rem;
+        }
+        .service-card h3 {
+            margin-bottom: 0.75rem;
+            color: #1e293b;
+            font-size: 1.25rem;
+        }
+        .service-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+        .about {
+            background: #fff;
+        }
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .about-container h2 {
+            font-size: 2.25rem;
+            color: #0f172a;
+            margin-bottom: 1.5rem;
+        }
+        .about-container p {
+            color: #475569;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+        .features-list {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .feature-badge {
+            background: #f1f5f9;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .feature-badge i {
+            color: #0284c7;
+        }
+        .contact-section {
+            background: #0f172a;
+            color: #fff;
+        }
+        .contact-section .section-title h2 {
+            color: #fff;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            color: #cbd5e1;
+            font-size: 1.1rem;
+        }
+        .contact-item i {
+            color: #38bdf8;
+            font-size: 1.5rem;
+        }
+        .contact-form {
+            background: #1e293b;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.85rem;
+            border-radius: 5px;
+            border: 1px solid #334155;
+            background: #0f172a;
+            color: #fff;
+            font-size: 1rem;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #38bdf8;
+        }
+        footer {
+            background: #090d16;
+            color: #64748b;
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.95rem;
+        }
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            header nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo"><i class="fa-solid fa-file-shield"></i> Priyanshu Dutta Audit Services</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact & Inquiry</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Pan-India Professional Audit & Verification Solutions</h1>
+        <p>Ensuring absolute accuracy in physical stock verification, warehouse auditing, fixed asset tracking, and comprehensive field support for corporations and logistics partners.</p>
+        <a href="#contact" class="btn">Partner With Us</a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-title">
+            <h2>Our Core Professional Services</h2>
+            <p>Executed with strict adherence to client standard operating procedures (SOPs).</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <h3>Physical Stock & Inventory</h3>
+                <p>Rigorous counting, auditing, and reconciliation of warehouse and retail stock to eliminate shrinkage and discrepancies.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-warehouse"></i>
+                <h3>Warehouse & Godown Audits</h3>
+                <p>End-to-end facility assessment and operational auditing managed by expert commerce and finance professionals.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <h3>Fixed Asset Verification</h3>
+                <p>Systematic asset tagging, physical verification, and detailed register reconciliation for enterprises.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-users-gear"></i>
+                <h3>Field Audit Support</h3>
+                <p>Scalable manpower deployment across India to execute large-scale institutional audit assignments seamlessly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <h2>About Priyanshu Dutta Audit Services</h2>
+            <p>Headquartered in <strong>Darbhanga, Bihar</strong>, we are an official Udyam-registered micro-enterprise dedicated to delivering institutional-grade financial and audit support services.</p>
+            <p>Our core team comprises experienced commerce and finance professionals. Backed by robust operational capabilities to deploy verified manpower nationwide, we collaborate with leading logistics providers, audit firms, and corporations to ensure timely, transparent, and accurate reporting.</p>
+            
+            <div class="features-list">
+                <div class="feature-badge"><i class="fa-solid fa-circle-check"></i> Udyam Registered Enterprise</div>
+                <div class="feature-badge"><i class="fa-solid fa-circle-check"></i> Pan-India Manpower Ready</div>
+                <div class="feature-badge"><i class="fa-solid fa-circle-check"></i> 100% SOP Compliant</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Interactive Form -->
+    <section id="contact" class="contact-section">
+        <div class="section-title">
+            <h2>Get in Touch / Business Inquiry</h2>
+            <p>Let's discuss how our audit team can support your upcoming assignment.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span>+91 8603507521</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope-circle-check"></i>
+                    <span>duttaauditservices@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Darbhanga, Bihar (Pan-India Operation Support)</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid id-card"></i>
+                    <span>MSME / Udyam Registered Service Provider</span>
+                </div>
+            </div>
+
+            <!-- Inquiry Form -->
+            <div class="contact-form">
+                <form action="mailto:duttaauditservices@gmail.com" method="POST" enctype="text/plain">
+                    <div class="form-group">
+                        <input type="text" name="Name" placeholder="Your Name / Company Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="Email" placeholder="Your Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Phone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="Message" rows="4" placeholder="Describe your audit requirement..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Priyanshu Dutta Audit Services. All rights reserved. | Udyam Registered Micro-Enterprise.</p>
+    </footer>
+
+</body>
+</html>
